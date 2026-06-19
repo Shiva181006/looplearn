@@ -1,0 +1,24 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+
+.analytics {
+
+
+padding:$spacing-lg;
+
+
+
+.chart-card {
+
+
+@include card;
+
+margin-top:$spacing-lg;
+
+
+}
+
+
+}

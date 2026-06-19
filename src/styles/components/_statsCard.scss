@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+.stat-card {
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:15px;
+
+  text-align:center;
+
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+
+
+  h2 {
+
+    color:$primary-color;
+
+    font-size:35px;
+
+  }
+
+
+
+  p {
+
+    color:$text-secondary;
+
+  }
+
+}

@@ -1,0 +1,37 @@
+// abstracts
+
+@use "./abstracts/mixins";
+
+
+// components
+@use "./components/navbar";
+@use "./components/problemCard";
+@use "./components/revisionCard";
+@use "./components/statsCard";
+
+
+// pages
+@use "./pages/dashboard";
+@use "./pages/addProblem";
+@use "./pages/library";
+@use "./pages/revision";
+@use "./pages/analytics";
+
+
+@use "./abstracts/variables" as *;
+
+
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+
+body{
+
+ font-family:$font-main;
+ background:$bg-main;
+
+}

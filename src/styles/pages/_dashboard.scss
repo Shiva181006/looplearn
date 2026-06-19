@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+.dashboard {
+
+  padding: $spacing-lg;
+
+
+  .stats-grid {
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    margin-top: 30px;
+
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+
+  .section-title {
+
+    margin-top: 30px;
+    font-size: 26px;
+
+  }
+
+
+  .problem-list {
+
+    margin-top: 20px;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+  }
+
+}

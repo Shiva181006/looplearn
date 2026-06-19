@@ -1,0 +1,100 @@
+@use "./variables" as *;
+
+
+// ===============================
+// FLEX
+// ===============================
+
+@mixin flex(
+  $justify: center,
+  $align: center,
+  $direction: row
+){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+
+// ===============================
+// CARD DESIGN
+// ===============================
+
+@mixin card {
+  background: $bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+}
+
+
+// ===============================
+// BUTTON
+// ===============================
+
+@mixin button(
+  $bg: $primary-color,
+  $color: white
+){
+  background: $bg;
+  color: $color;
+
+  border: none;
+  outline: none;
+
+  padding: 10px 18px;
+  border-radius: $radius-sm;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+  }
+}
+
+
+// ===============================
+// GRID
+// ===============================
+
+@mixin grid(
+  $columns: 3,
+  $gap:20px
+){
+  display: grid;
+  grid-template-columns: repeat($columns,1fr);
+  gap:$gap;
+}
+
+
+// ===============================
+// RESPONSIVE
+// ===============================
+
+@mixin mobile {
+  @media(max-width:$mobile){
+    @content;
+  }
+}
+
+
+@mixin tablet {
+  @media(max-width:$tablet){
+    @content;
+  }
+}
+
+
+// ===============================
+// TEXT SHORTEN
+// ===============================
+
+@mixin truncate {
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}

@@ -1,0 +1,48 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+
+.add-problem {
+
+
+ max-width:700px;
+ margin:auto;
+
+ @include card;
+
+
+
+ form {
+
+
+  display:flex;
+  flex-direction:column;
+  gap:$spacing-md;
+
+
+
+  input,
+  select {
+
+
+   padding:12px;
+   border:1px solid $border-color;
+   border-radius:$radius-sm;
+
+
+  }
+
+
+
+  button {
+
+
+   @include button;
+
+
+  }
+
+ }
+
+}

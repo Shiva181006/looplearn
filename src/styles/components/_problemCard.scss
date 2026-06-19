@@ -1,0 +1,60 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+.problem-card {
+
+  @include card;
+
+  display:flex;
+  flex-direction:column;
+  gap:$spacing-md;
+
+
+  &__header {
+
+    @include flex(space-between,center);
+
+
+    h3 {
+      color:$text-primary;
+      font-size:18px;
+    }
+  }
+
+
+  &__topic {
+
+    color:$primary-color;
+    font-weight:600;
+
+  }
+
+
+  &__link {
+
+    color:$secondary-color;
+    text-decoration:none;
+
+
+    &:hover {
+
+      text-decoration:underline;
+
+    }
+  }
+
+
+  &__actions {
+
+    @include flex(flex-end,center);
+    gap:$spacing-sm;
+
+
+    button {
+
+      @include button;
+
+    }
+  }
+}

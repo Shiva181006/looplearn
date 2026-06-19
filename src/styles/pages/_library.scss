@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+
+.library {
+
+
+ padding:$spacing-lg;
+
+
+
+ &__grid {
+
+
+  @include grid(3,20px);
+
+
+
+  @include tablet {
+
+
+    grid-template-columns:1fr;
+
+
+  }
+
+ }
+
+}
