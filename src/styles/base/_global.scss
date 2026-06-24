@@ -1,0 +1,44 @@
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+
+body{
+
+ background:
+ radial-gradient(
+ circle at top left,
+ rgba(124,58,237,.15),
+ transparent 35%
+ ),
+ #09090b;
+
+
+ color:#fafafa;
+
+ font-family:
+ Inter,
+ system-ui,
+ sans-serif;
+
+ min-height:100vh;
+}
+
+
+button,input,textarea,select{
+
+ font-family:inherit;
+}
+
+
+::-webkit-scrollbar{
+ width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+
+ background:#27272a;
+ border-radius:10px;
+}

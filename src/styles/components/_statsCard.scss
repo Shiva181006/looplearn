@@ -1,35 +1,57 @@
 @use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
 
 
-.stat-card {
+.stats-card{
 
-  background:white;
-
-  padding:25px;
-
-  border-radius:15px;
-
-  text-align:center;
-
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
+background:
+linear-gradient(
+180deg,
+#18181b,
+#111113
+);
 
 
+border:1px solid $border-color;
 
-  h2 {
 
-    color:$primary-color;
+border-radius:22px;
 
-    font-size:35px;
 
-  }
+padding:28px;
+
+
+transition:.25s;
 
 
 
-  p {
+&:hover{
 
-    color:$text-secondary;
+transform:translateY(-5px);
 
-  }
+border-color:$primary;
+
+}
+
+
+
+h3{
+
+color:$text-secondary;
+
+font-size:15px;
+
+}
+
+
+.value{
+
+font-size:38px;
+
+font-weight:800;
+
+margin-top:15px;
+
+}
+
 
 }

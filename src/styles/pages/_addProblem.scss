@@ -3,46 +3,81 @@
 
 
 
-.add-problem {
+.form-card{
+
+max-width:800px;
+
+margin:auto;
 
 
- max-width:700px;
- margin:auto;
+background:#111113;
 
- @include card;
+border:1px solid #27272a;
 
+border-radius:22px;
 
-
- form {
-
-
-  display:flex;
-  flex-direction:column;
-  gap:$spacing-md;
-
-
-
-  input,
-  select {
-
-
-   padding:12px;
-   border:1px solid $border-color;
-   border-radius:$radius-sm;
-
-
-  }
+padding:35px;
 
 
 
-  button {
+input,
+select,
+textarea{
+
+width:100%;
+
+background:#09090b;
+
+border:1px solid #27272a;
+
+border-radius:12px;
+
+padding:14px;
+
+color:white;
 
 
-   @include button;
+margin-bottom:18px;
 
 
-  }
+&:focus{
 
- }
+outline:none;
+
+border-color:#7c3aed;
+
+}
+
+}
+
+
+
+button{
+
+width:100%;
+
+padding:15px;
+
+border-radius:12px;
+
+border:none;
+
+background:#7c3aed;
+
+color:white;
+
+font-weight:700;
+
+cursor:pointer;
+
+
+
+&:hover{
+
+background:#8b5cf6;
+
+}
+
+}
 
 }
