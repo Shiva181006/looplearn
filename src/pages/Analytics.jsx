@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useProblems } from '../hooks/useProblems.js';
 import StatsCard from '../components/StatsCard.jsx';
+import { BarChart3, PieChart, AlertCircle } from 'lucide-react';
 
 function countBy(arr, key) {
   const m = {};
@@ -17,9 +18,12 @@ function Bars({ data, tone = 'primary' }) {
       {entries.map(([k, v]) => (
         <li key={k}>
           <div className="bar-row">
-            <span>{k}</span><span className="muted">{v}</span>
+            <span className="bar-name">{k}</span>
+            <span className="muted bar-value">{v}</span>
           </div>
-          <div className="bar-track"><div className={`bar-fill tone-${tone}`} style={{ width: `${(v / max) * 100}%` }} /></div>
+          <div className="bar-track">
+            <div className={`bar-fill tone-${tone}`} style={{ width: `${(v / max) * 100}%` }} />
+          </div>
         </li>
       ))}
     </ul>
@@ -49,7 +53,7 @@ export default function Analytics() {
   }, [problems]);
 
   return (
-    <div className="page">
+    <div className="page analytics">
       <div className="page-head">
         <div>
           <h1>Analytics</h1>
@@ -66,25 +70,35 @@ export default function Analytics() {
 
       <div className="grid grid-2">
         <section className="panel">
-          <h2>Topic Distribution</h2>
+          <div className="panel-head-icon">
+            <BarChart3 size={20} className="panel-icon text-primary" />
+            <h2>Topic Distribution</h2>
+          </div>
           <Bars data={topics} tone="primary" />
         </section>
+        
         <section className="panel">
-          <h2>Pattern Distribution</h2>
+          <div className="panel-head-icon">
+            <PieChart size={20} className="panel-icon text-accent" />
+            <h2>Pattern Distribution</h2>
+          </div>
           <Bars data={patterns} tone="accent" />
         </section>
       </div>
 
       <section className="panel">
-        <h2>Weak Areas</h2>
+        <div className="panel-head-icon">
+          <AlertCircle size={20} className="panel-icon text-warning" />
+          <h2>Weak Areas</h2>
+        </div>
         {weakAreas.length === 0 ? (
           <p className="muted">No weak areas detected. Keep it up!</p>
         ) : (
           <ul className="weak-list">
             {weakAreas.map((w) => (
               <li key={w.name}>
-                <span>You need more practice on <strong>{w.name}</strong></span>
-                <span className="muted">{w.weak}/{w.total} marked weak</span>
+                <span className="weak-area-text">You need more practice on <strong>{w.name}</strong></span>
+                <span className="muted weak-area-ratio">{w.weak}/{w.total} marked weak</span>
               </li>
             ))}
           </ul>

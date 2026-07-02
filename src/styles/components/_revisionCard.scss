@@ -1,35 +1,102 @@
 @use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
-
 
 .revision-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 
-  @include card;
-
-
-  border-left:5px solid $primary-color;
-
-
-  h3 {
-
-    color:$text-primary;
-    margin-bottom:$spacing-sm;
-
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.02), transparent 70%);
+    pointer-events: none;
   }
 
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba($primary, 0.35);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 25px rgba($primary, 0.08);
+  }
+}
 
-  p {
+.revision-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
 
-    color:$text-secondary;
+.revision-stage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(46, 230, 193, 0.06);
+  border: 1px solid rgba(46, 230, 193, 0.2);
+  font-family: $font-heading;
+  margin: 4px 0;
+  width: fit-content;
 
+  .stage-day {
+    font-weight: 700;
+    color: #2ee6c1;
+    font-size: 13px;
+    letter-spacing: 0.5px;
   }
 
+  .stage-divider {
+    color: rgba(46, 230, 193, 0.4);
+    font-weight: 700;
+  }
 
-  .status {
+  .stage-name {
+    font-weight: 600;
+    color: $text-primary;
+    font-size: 13px;
+  }
+}
 
-    margin-top:$spacing-md;
-    color:$success-color;
-    font-weight:bold;
+.problem-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
 
+  .btn {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 13px;
+    
+    &.btn-ghost {
+      flex: 0.8;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .revision-card {
+    padding: 20px;
+  }
+
+  .problem-actions {
+    flex-direction: column;
+    width: 100%;
+
+    .btn {
+      width: 100%;
+    }
   }
 }

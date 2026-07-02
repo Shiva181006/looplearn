@@ -2,14 +2,14 @@
 // COLORS
 // =====================
 
-$bg-primary:#09090b;
-$bg-secondary:#111113;
-$bg-card:rgba(24,24,27,.75);
+$bg-primary:#050508;
+$bg-secondary:rgba(18, 18, 26, 0.7);
+$bg-card:rgba(18, 18, 26, 0.7);
 
 
-$text-primary:#fafafa;
-$text-secondary:#a1a1aa;
-$text-muted:#71717a;
+$text-primary:#f3f4f6;
+$text-secondary:#9ca3af;
+$text-muted:#6b7280;
 
 
 // old aliases
@@ -57,8 +57,8 @@ $hard-color:#ef4444;
 // BORDER
 // =====================
 
-$border-color:#27272a;
-$border-light:$border-color;
+$border-color:rgba(255, 255, 255, 0.08);
+$border-light:rgba(255, 255, 255, 0.06);
 
 
 // =====================
@@ -91,7 +91,7 @@ $radius-full:999px;
 
 
 $shadow-card:
-0 8px 30px rgba(0,0,0,.35);
+0 12px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
 
 
 $shadow-sm:
@@ -104,6 +104,15 @@ $shadow-md:
 
 $shadow-lg:
 0 20px 45px rgba(0,0,0,.35);
+
+$shadow-premium:
+0 25px 50px -12px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
+$glow-primary:
+0 0 20px rgba(124, 58, 237, 0.15);
+
+$glow-accent:
+0 0 20px rgba(46, 230, 193, 0.15);
 
 
 // =====================
@@ -171,15 +180,17 @@ $hover-bg:#18181b;
 // =================================
 
 $font-main:
-Inter,
+"Inter",
 system-ui,
 -apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
 sans-serif;
 
 
-$font-heading:$font-main;
+$font-heading:
+"Outfit",
+system-ui,
+-apple-system,
+sans-serif;
 
 
 // =================================
@@ -230,11 +241,9 @@ $bg-hover: #18181b;
 // fonts
 
 $font-main:
-Inter,
+"Inter",
 system-ui,
 -apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
 sans-serif;
 
 
@@ -257,9 +266,9 @@ $card-background:$bg-secondary;
 
 // inputs
 
-$input-bg:#09090b;
+$input-bg:rgba(10, 10, 15, 0.85);
 
-$input-border:$border-color;
+$input-border:rgba(255, 255, 255, 0.1);
 
 
 // layout

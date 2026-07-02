@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useProblems } from "../hooks/useProblems.js";
 import { parseProblemUrl } from "../utils/urlParser.js";
+import { Save, ArrowLeft } from "lucide-react";
 
 const TOPICS = [
   "Array",
@@ -88,7 +89,7 @@ export default function AddProblem() {
   };
 
   return (
-    <div className="page">
+    <div className="page add-problem">
       <div className="page-head">
         <div>
           <h1>{editing ? "Edit Problem" : "Add a Problem"}</h1>
@@ -128,14 +129,16 @@ export default function AddProblem() {
 
         <label className="field">
           <span>Difficulty</span>
-          <select
-            value={form.difficulty}
-            onChange={(e) => set("difficulty", e.target.value)}
-          >
-            <option>Easy</option>
-            <option>Medium</option>
-            <option>Hard</option>
-          </select>
+          <div className="select-wrapper">
+            <select
+              value={form.difficulty}
+              onChange={(e) => set("difficulty", e.target.value)}
+            >
+              <option>Easy</option>
+              <option>Medium</option>
+              <option>Hard</option>
+            </select>
+          </div>
         </label>
 
         <label className="field">
@@ -169,7 +172,7 @@ export default function AddProblem() {
         </label>
 
         <label className="field span-2">
-          <span>Confidence</span>
+          <span>Confidence Level</span>
           <div className="seg">
             {["Weak", "Medium", "Strong"].map((c) => (
               <button
@@ -200,10 +203,10 @@ export default function AddProblem() {
             className="btn btn-ghost"
             onClick={() => navigate(-1)}
           >
-            Cancel
+            <ArrowLeft size={16} /> Cancel
           </button>
           <button type="submit" className="btn btn-primary">
-            {editing ? "Save Changes" : "Save & Schedule"}
+            <Save size={16} /> {editing ? "Save Changes" : "Save & Schedule"}
           </button>
         </div>
       </form>
